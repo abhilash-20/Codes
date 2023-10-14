@@ -119,10 +119,12 @@ int main()
         case 6:
             l.roots();
             break;
-        case 7: cout<<"Thank you for giving my Calculator a chance. Come again soon!"<<endl;
+        case 7:
+            cout << "Thank you for giving my Calculator a chance. Come again soon!" << endl;
             exit(0);
         default:
-            exit(0);
+            cout << "OOPS!! Wrong choice." << endl;
+            break;
         }
     }
 }
