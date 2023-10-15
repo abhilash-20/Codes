@@ -1,15 +1,14 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 class calculator
 {
-public:
+private:
     double x, y;
-    calculator(double a, double b)
-    {
-        x = a;
-        y = b;
-    }
+
+public:
+    calculator(double a, double b) : x(a), y(b) {}
     void add()
     {
         double sum = x + y;
@@ -158,18 +157,52 @@ public:
             }
         }
     }
-};
 
-int main()
-{
+    void matrixadd()
+    {
+        int a[10][10], b[10][10], c[10][10], m, n, i, j;
+        cout << "Enter the number of rows" << endl;
+        cin >> m;
+        cout << "Enter the number of columns" << endl;
+        cin >> n;
+        cout << "Enter matrix A" << endl;
+        for (i = 0; i < m; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                cin >> a[i][j];
+            }
+        }
+        cout << "Enter matrix B" << endl;
+        for (i = 0; i < m; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                cin >> b[i][j];
+            }
+        }
 
-    int ch = 0;
-    double a, b;
-    cout << "Enter two numbers: " << endl;
-    cin >> a >> b;
-    cout<<"Hi! Enter your name: "<<endl;
-    calculator l(a, b);
-    while (1)
+        // Addition
+        for (i = 0; i < m; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                c[i][j] = a[i][j] + b[i][j];
+            }
+        }
+
+        cout << "The final matrix is: " << endl;
+        for (i = 0; i < m; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                cout << setw(4) << c[i][j];
+            }
+            cout << endl;
+        }
+    }
+
+    void menu()
     {
         cout << "Welcome to my Portable Calculator! You can opt for the following operations here: " << endl;
         cout << "1. ADD" << endl
@@ -179,7 +212,22 @@ int main()
              << "5. Exponent" << endl
              << "6. Roots" << endl
              << "7. Trigonometric Operations" << endl
-             << "8. Exit" << endl;
+             << "8. Matrix Addition" << endl
+             << "9. Exit" << endl;
+    }
+};
+
+int main()
+{
+
+    int ch = 0;
+    double a, b;
+    cout << "Enter two numbers: " << endl;
+    cin >> a >> b;
+    calculator l(a, b);
+    while (1)
+    {
+        l.menu();
         cin >> ch;
         switch (ch)
         {
@@ -212,6 +260,10 @@ int main()
             cout << endl;
             break;
         case 8:
+            l.matrixadd();
+            cout << endl;
+            break;
+        case 9:
             cout << "Thank you for giving my Calculator a chance. Come again soon!" << endl;
             exit(0);
         default:
