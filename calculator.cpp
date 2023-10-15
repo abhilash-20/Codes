@@ -72,11 +72,91 @@ public:
 
     void roots()
     {
-        double q1 = 0, q2 = 0;
-        q1 = sqrt(x);
-        q2 = sqrt(y);
-        cout << "The square root of the first number is: " << q1 << endl;
-        cout << "The square root of the second number is: " << q2 << endl;
+        double q1 = 0, q2 = 0, c1 = 0, c2 = 0;
+        int ch;
+        cout << "Enter:" << endl
+             << "1 to find the square roots of the numbers" << endl
+             << "2 to find the cube roots of the numbers" << endl;
+        cin >> ch;
+        if (ch == 1)
+        {
+            q1 = sqrt(x);
+            q2 = sqrt(y);
+            cout << "The square root of the first number is: " << q1 << endl;
+            cout << "The square root of the second number is: " << q2 << endl;
+        }
+        else
+        {
+            c1 = cbrt(x);
+            c2 = cbrt(y);
+            cout << "The cube root of the first number is: " << c1 << endl;
+            cout << "The cube root of the second number is: " << c2 << endl;
+        }
+    }
+
+    void trigo()
+    {
+        int ch3, ch1, ch2;
+        double si = 0, co = 0, t = 0;
+        cout << "For which number do you want to perform the trigonometric functions: " << endl
+             << "Enter" << endl
+             << "1 for the  first number" << endl
+             << "2 for the second number" << endl;
+        cin >> ch3;
+        if (ch3 == 1)
+        {
+            cout << "For the first number ie " << x << endl
+                 << "What do you want to find?" << endl
+                 << "1) Sine" << endl
+                 << "2)Cosine" << endl
+                 << "3)Tan" << endl;
+            cin >> ch1;
+            switch (ch1)
+            {
+            case 1:
+                si = sin(x);
+                cout << "The sine of the " << x << " is " << si << endl;
+                break;
+            case 2:
+                co = cos(x);
+                cout << "The cosine of the " << x << " is " << co << endl;
+                break;
+            case 3:
+                t = tan(x);
+                cout << "The tan of the " << x << " is " << t << endl;
+                break;
+            default:
+                cout << "Wrong Choice" << endl;
+                break;
+            }
+        }
+        else
+        {
+            cout << "For the second number ie " << y << endl
+                 << "What do you want to find?" << endl
+                 << "1) Sine" << endl
+                 << "2)Cosine" << endl
+                 << "3)Tan" << endl;
+            cin >> ch2;
+            switch (ch2)
+            {
+            case 1:
+                si = sin(y);
+                cout << "The sine of the " << y << " is " << si << endl;
+                break;
+            case 2:
+                co = cos(y);
+                cout << "The cosine of the " << y << " is " << co << endl;
+                break;
+            case 3:
+                t = tan(y);
+                cout << "The tan of the " << y << " is " << t << endl;
+                break;
+            default:
+                cout << "Wrong Choice" << endl;
+                break;
+            }
+        }
     }
 };
 
@@ -94,32 +174,43 @@ int main()
         cout << "1. ADD" << endl
              << "2. Subtract" << endl
              << "3. Multiply" << endl
-             << "4.Divide" << endl
+             << "4. Divide" << endl
              << "5. Exponent" << endl
              << "6. Roots" << endl
-             << "7. Exit" << endl;
+             << "7. Trigonometric Operations" << endl
+             << "8. Exit" << endl;
         cin >> ch;
         switch (ch)
         {
         case 1:
             l.add();
+            cout << endl;
             break;
         case 2:
             l.subtract();
+            cout << endl;
             break;
         case 3:
             l.mul();
+            cout << endl;
             break;
         case 4:
             l.divide();
+            cout << endl;
             break;
         case 5:
             l.exponent();
+            cout << endl;
             break;
         case 6:
             l.roots();
+            cout << endl;
             break;
         case 7:
+            l.trigo();
+            cout << endl;
+            break;
+        case 8:
             cout << "Thank you for giving my Calculator a chance. Come again soon!" << endl;
             exit(0);
         default:
