@@ -167,6 +167,7 @@ int main()
     double a, b;
     cout << "Enter two numbers: " << endl;
     cin >> a >> b;
+    cout<<"Hi! Enter your name: "<<endl;
     calculator l(a, b);
     while (1)
     {
