@@ -206,6 +206,7 @@ public:
     {
         double l1 = 0.0, l2 = 0.0;
         cout << "Here, you can find the natural logarithm of the numbers." << endl;
+        cout<<endl;
         l1 = log(x);
         l2 = log(y);
         cout << "The natural log of " << x << " is: " << l1 << endl;
