@@ -202,6 +202,16 @@ public:
         }
     }
 
+    void logs()
+    {
+        double l1 = 0.0, l2 = 0.0;
+        cout << "Here, you can find the natural logarithm of the numbers." << endl;
+        l1 = log(x);
+        l2 = log(y);
+        cout << "The natural log of " << x << " is: " << l1 << endl;
+        cout << "The natural log of " << y << " is: " << l2 << endl;
+    }
+
     void menu()
     {
         cout << "Welcome to my Portable Calculator! You can opt for the following operations here: " << endl;
@@ -213,7 +223,8 @@ public:
              << "6. Roots" << endl
              << "7. Trigonometric Operations" << endl
              << "8. Matrix Addition" << endl
-             << "9. Exit" << endl;
+             << "9. Logarithm" << endl
+             << "10. Exit" << endl;
     }
 };
 
@@ -264,6 +275,10 @@ int main()
             cout << endl;
             break;
         case 9:
+            l.logs();
+            cout << endl;
+            break;
+        case 10:
             cout << "Thank you for giving my Calculator a chance. Come again soon!" << endl;
             exit(0);
         default:
