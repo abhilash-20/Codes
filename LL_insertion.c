@@ -11,7 +11,6 @@ void insertBegin()
     newnode = (struct node *)malloc(sizeof(struct node));
     printf("Enter the data you want to insert at the beginning:\n");
     scanf("%d", &newnode->data);
-    newnode->next = 0;
     newnode->next = head;
     head = newnode;
 }
@@ -23,7 +22,6 @@ void insertPos(int c)
     newnode = (struct node *)malloc(sizeof(struct node));
     printf("Enter the data you want to enter:\n");
     scanf("%d", &newnode->data);
-    newnode->next = 0;
     printf("Enter the position where you want to enter the element:\n");
     scanf("%d", &pos);
     if (pos <= 0 || pos > c)
